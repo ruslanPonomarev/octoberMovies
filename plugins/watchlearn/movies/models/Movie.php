@@ -17,7 +17,7 @@ class Movie extends Model
 
 
     /**
-     * @var string The database table used by the model.
+     * @var string The database table used by the model.   
      */
     public $table = 'watchlearn_movies_';
 
@@ -27,6 +27,8 @@ class Movie extends Model
     public $rules = [
     ];
 
+    // protected $jsonable = ['actors'];
+
     /* Relations */
 
 
@@ -35,6 +37,12 @@ class Movie extends Model
             'Watchlearn\Movies\Models\Genre',
             'table' => 'watchlearn_movies_movies_genres',
             'order' => ''
+        ],
+
+        'actors' => [
+            'Watchlearn\Movies\Models\Actor',
+            'table' => 'watchlearn_movies_actors_movies',
+            'order' => 'name'
         ]
     ];
 
